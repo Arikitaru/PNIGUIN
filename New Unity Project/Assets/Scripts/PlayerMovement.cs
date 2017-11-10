@@ -12,6 +12,10 @@ public class PlayerMovement : MonoBehaviour
 		float mouseInput = Input.GetAxis ("Mouse X");
 		Vector3 lookHere = new Vector3 (0, mouseInput, 0);
 		transform.Rotate (lookHere);
+	}
+
+	void FixedUpdate ()
+	{
 		transform.Translate (Input.GetAxis("Horizontal") * Time.deltaTime * speed, 0f, Input.GetAxis("Vertical") * Time.deltaTime * speed);
 	}
 }
